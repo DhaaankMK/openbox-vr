@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Logo provisória do OpenBox VR">
+  <!-- OpenBox VR — Criador: DhaaankMK — Licença DUMP-L v1.0 -->
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="38%" r="65%">
+      <stop offset="0" stop-color="#0a4fb5"/>
+      <stop offset="1" stop-color="#050a14"/>
+    </radialGradient>
+    <linearGradient id="visor" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#16294a"/>
+      <stop offset="1" stop-color="#050a14"/>
+    </linearGradient>
+  </defs>
+  <rect width="200" height="200" fill="url(#bg)"/>
+  <circle cx="100" cy="84" r="62" fill="#00c8ff" opacity=".12"/>
+  <path d="M40 112 L100 132 L160 112 L160 167 L100 187 L40 167 Z" fill="#c98a4b"/>
+  <path d="M40 112 L62 94 L100 110 L138 94 L160 112 L100 132 Z" fill="#e0a566"/>
+  <path d="M62 94 L100 110 L138 94 L128 86 L100 98 L72 86 Z" fill="#9c6a34" opacity=".55"/>
+  <rect x="60" y="38" width="80" height="42" rx="19" fill="#eaf3ff" stroke="#00c8ff" stroke-width="3"/>
+  <rect x="70" y="46" width="60" height="26" rx="11" fill="url(#visor)"/>
+  <path d="M60 52 Q46 56 46 66" fill="none" stroke="#14213d" stroke-width="7" stroke-linecap="round"/>
+  <path d="M140 52 Q154 56 154 66" fill="none" stroke="#14213d" stroke-width="7" stroke-linecap="round"/>
+  <path d="M30 34 L44 44 M170 34 L156 44 M22 66 L38 66 M178 66 L162 66" stroke="#00c8ff" stroke-width="4" stroke-linecap="round"/>
+</svg>
