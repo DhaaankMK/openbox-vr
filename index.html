@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<!--
+====================================================================
+  OpenBox VR — Realidade Virtual acessível, aberta e gratuita
+  Criador: DhaaankMK
+  GitHub:  https://github.com/DhaaankMK
+  YouTube: https://www.youtube.com/@DhaaankMK
+  Licença: DHAAANKMK PROPRIETARY LICENSE (DUMP-L) v1.0 — ver LICENSE.txt
+  Copyright (c) 2026 DhaaankMK. Todos os direitos reservados.
+  É proibida a remoção dos créditos acima (Cláusula 3.2 da DUMP-L).
+
+  Estrutura:  index.html  +  assets/css/style.css  +  assets/js/config.js
+              assets/js/app.js  +  assets/img/  +  assets/moldes/
+====================================================================
+-->
+<html lang="pt-BR" data-device="pc">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy"
+        content="default-src 'none'; img-src 'self' data:; style-src 'self'; script-src 'self'; media-src 'self'; base-uri 'none'; form-action 'none'">
+  <meta name="referrer" content="no-referrer">
+  <meta name="author" content="DhaaankMK">
+  <meta name="description" content="OpenBox VR: guias, moldes de Google Cardboard, lentes alternativas e PCVR. Projeto open-source e 100% gratuito.">
+  <meta name="theme-color" content="#050a14">
+  <title>OpenBox VR — Realidade Virtual para todos</title>
+  <link rel="icon" type="image/svg+xml" href="assets/img/logo.svg">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script src="assets/js/config.js" defer></script>
+  <script src="assets/js/vrs-data.js" defer></script>
+  <script src="assets/js/app.js" defer></script>
+</head>
+
+<body>
+  <noscript>
+    <p class="wrap">Este site usa JavaScript apenas para alternar as abas e para as demonstrações. Ative-o no navegador para a melhor experiência.</p>
+  </noscript>
+  <a class="skip" href="#conteudo">Ir para o conteúdo</a>
+
+  <header class="site">
+    <div class="wrap bar">
+      <a class="brand" href="#inicio" data-goto="inicio" aria-label="OpenBox VR — página inicial">
+        <span class="logo-slot">
+          <!-- Logo: assets/img/logo.svg (provisória). Se assets/img/logo.png existir, o app.js a utiliza automaticamente. -->
+          <img data-logo src="assets/img/logo.svg" alt="Logo do OpenBox VR: caixa de papelão com um headset de realidade virtual brilhando" width="48" height="48">
+        </span>
+        <span class="brand-text"><span class="brand-name"><b>Open</b>Box <i>VR</i></span><span class="by">By DhaaankMK</span></span>
+      </a>
+
+      <div class="device-switch" role="group" aria-label="Escolher versão do site">
+        <button type="button" data-device-btn="pc" aria-pressed="true">🖥️ PC</button>
+        <button type="button" data-device-btn="mobile" aria-pressed="false">📱 Celular</button>
+      </div>
+      <button type="button" class="sound-btn" id="sound-btn" aria-pressed="true" aria-label="Sons ligados. Toque para silenciar">🔊</button>
+    </div>
+  </header>
+
+  <div class="dev-notice" role="note">
+    <div class="wrap"><strong>🚧 Projeto em desenvolvimento.</strong> O OpenBox VR ainda está sendo feito por apenas uma pessoa. Tenha calma: o site vai melhorar e ganhar muito mais conteúdo com o tempo.</div>
+  </div>
+
+  <nav class="tabs" aria-label="Seções do site">
+    <ul class="tablist" role="tablist" aria-label="Abas principais">
+      <li role="presentation"><button class="tab-btn" role="tab" id="tab-inicio" aria-controls="inicio" aria-selected="true" data-tab="inicio"><span class="tab-ico" aria-hidden="true">🏠</span><span class="tab-label">Início</span><span class="tab-short" aria-hidden="true">Início</span></button></li>
+      <li role="presentation"><button class="tab-btn" role="tab" id="tab-vrs" aria-controls="vrs" aria-selected="false" tabindex="-1" data-tab="vrs"><span class="tab-ico" aria-hidden="true">📚</span><span class="tab-label">VRs</span><span class="tab-short" aria-hidden="true">VRs</span></button></li>
+      <li role="presentation"><button class="tab-btn" role="tab" id="tab-diy" aria-controls="diy" aria-selected="false" tabindex="-1" data-tab="diy"><span class="tab-ico" aria-hidden="true">✂️</span><span class="tab-label">Construir</span><span class="tab-short" aria-hidden="true">Construir</span></button></li>
+      <li role="presentation"><button class="tab-btn" role="tab" id="tab-guias" aria-controls="guias" aria-selected="false" tabindex="-1" data-tab="guias"><span class="tab-ico" aria-hidden="true">📖</span><span class="tab-label">Guias</span><span class="tab-short" aria-hidden="true">Guias</span></button></li>
+    </ul>
+  </nav>
+
+  <div class="wrap layout">
+    <main id="conteudo">
+
+      <!-- ===================== 1. INÍCIO ===================== -->
+      <section id="inicio" class="panel" role="tabpanel" aria-labelledby="tab-inicio" tabindex="0">
+        <div class="hero">
+          <div>
+            <div class="badges">
+              <span class="badge">OPEN-SOURCE</span>
+              <span class="badge b">100% GRATUITO</span>
+              <span class="badge">SEM ANÚNCIOS</span>
+            </div>
+            <h1>Realidade Virtual<br><span class="glow-b">numa caixa de papelão</span>.</h1>
+            <p class="lead">O OpenBox VR existe para provar que ninguém precisa gastar milhares de reais para experimentar VR. Com um celular, papelão, lentes baratas e boa vontade, é possível montar o seu próprio headset.</p>
+            <div class="btn-row">
+              <button class="btn" type="button" data-goto="diy">Montar meu Cardboard</button>
+              <button class="btn ghost" type="button" data-goto="vr">Entender como funciona</button>
+            </div>
+          </div>
+          <div class="hero-logo">
+            <img data-logo src="assets/img/logo.svg" alt="Logo do OpenBox VR: caixa de papelão aberta com um headset de VR brilhando em azul neon" width="380" height="380">
+          </div>
+        </div>
+
+        <div class="note only-pc"><strong>Versão para PC:</strong> nesta versão, o tutorial e as demonstrações <strong>não exigem que você use o celular</strong>. O simulador é controlado pelo mouse e a calculadora substitui as medições feitas no aparelho. Para trocar de versão, use o seletor no topo da página.</div>
+        <div class="note only-mobile"><strong>Versão para celular:</strong> menus na parte inferior da tela, botões grandes e demonstrações que usam os sensores do aparelho. Para trocar de versão, use o seletor no topo da página.</div>
+
+        <h2>Para onde ir</h2>
+        <div class="grid">
+          <a class="card nav-card" href="#vrs" data-goto="vrs"><span class="ico" aria-hidden="true">📚</span><h3>VRs</h3><p>Enciclopédia de headsets: dos primeiros aos mais recentes.</p></a>
+          <a class="card nav-card" href="#diy" data-goto="diy"><span class="ico" aria-hidden="true">✂️</span><h3>Construir</h3><p>Escolha o Cardboard 1.0 ou 2.0 e monte o seu, passo a passo.</p></a>
+          <a class="card nav-card" href="#vr" data-goto="vr"><span class="ico" aria-hidden="true">🧠</span><h3>Guias</h3><p>O que é VR, lentes e como jogar jogos de PC no celular.</p></a>
+        </div>
+
+        <h2>Manifesto</h2>
+        <div class="grid">
+          <article class="card"><span class="ico" aria-hidden="true">🌍</span><h3>VR para todos</h3><p>Tecnologia não deve ser privilégio. Toda pessoa com um smartphone comum merece poder explorar mundos virtuais.</p></article>
+          <article class="card"><span class="ico" aria-hidden="true">🔓</span><h3>Conhecimento aberto</h3><p>Todos os guias, tutoriais e referências deste site são gratuitos, sem cadastro, sem paywall e sem rastreamento.</p></article>
+          <article class="card"><span class="ico" aria-hidden="true">🛠️</span><h3>Faça você mesmo</h3><p>Aprender montando é a melhor forma de entender. Cada projeto DIY ensina princípios reais de óptica e computação gráfica.</p></article>
+          <article class="card"><span class="ico" aria-hidden="true">♻️</span><h3>Baixo custo, baixo desperdício</h3><p>Reaproveitar papelão, garrafas e peças usadas reduz custo e lixo, mantendo o hobby sustentável.</p></article>
+        </div>
+
+        <h2>Como o VR mobile funciona</h2>
+        <p>O princípio é simples: o celular é, ao mesmo tempo, <strong>tela</strong>, <strong>processador</strong> e <strong>sensor de movimento</strong>. A caixa apenas o mantém na posição correta, e as lentes permitem que seus olhos enxerguem a tela de perto sem esforço.</p>
+        <ol class="steps">
+          <li><h3>O app divide a tela em duas imagens</h3><p>Uma para cada olho, ligeiramente diferentes entre si, criando a sensação de profundidade (estereoscopia).</p></li>
+          <li><h3>As lentes ampliam e focam</h3><p>Sem elas, a tela estaria perto demais para os olhos focarem. As lentes projetam a imagem como se estivesse a alguns metros de distância e preenchem o campo de visão.</p></li>
+          <li><h3>O giroscópio acompanha sua cabeça</h3><p>Ao girar a cabeça, os sensores do celular informam o app, que atualiza a imagem em tempo real, fazendo você sentir que "está dentro" da cena.</p></li>
+        </ol>
+        <div class="note"><strong>Expectativa realista:</strong> o Cardboard oferece uma experiência de VR básica (rotação da cabeça, sem rastreamento de posição). É excelente para vídeos 360°, tours virtuais e jogos simples. Para jogos completos, veja o guia <em>Softwares &amp; PCVR</em>.</div>
+      </section>
+
+
+
+
+
+      <!-- ===================== 2. VRs (enciclopédia) ===================== -->
+      <section id="vrs" class="panel" role="tabpanel" aria-labelledby="tab-vrs" tabindex="0" hidden>
+        <h2>VRs</h2>
+        <p class="lead">Enciclopédia de headsets de realidade virtual: dos primeiros experimentos aos modelos atuais, com ano, tipo, tela, rastreamento e preço de lançamento.</p>
+        <div class="note"><strong>Como ler:</strong> "—" significa que o dado não foi confirmado em fonte. Preços e status mudam com o tempo: confirme no site do fabricante antes de comprar. Cada ficha lista as fontes consultadas.</div>
+        <div class="calc vr-tools">
+          <div class="field"><label for="vrs-q">Buscar</label><input id="vrs-q" type="search" placeholder="Ex.: Quest, Cardboard, 2016" autocomplete="off"></div>
+          <div class="field"><label for="vrs-cat">Tipo</label><select id="vrs-cat"><option value="">Todos</option></select></div>
+          <div class="field"><label for="vrs-ord">Ordenar por</label>
+            <select id="vrs-ord">
+              <option value="asc">Mais antigos primeiro</option>
+              <option value="desc">Mais recentes primeiro</option>
+              <option value="nome">Nome (A–Z)</option>
+            </select>
+          </div>
+        </div>
+        <p class="readout" id="vrs-count" role="status" aria-live="polite"></p>
+        <div class="vr-grid" id="vrs-lista"></div>
+        <div class="note ok"><strong>Em expansão:</strong> a enciclopédia começa com os modelos do pack inicial e será ampliada com headsets históricos, de PC e de realidade mista.</div>
+      </section>
+
+      <!-- ===================== 3. CONSTRUIR (apostila) ===================== -->
+      <section id="diy" class="panel" role="tabpanel" aria-labelledby="tab-diy" tabindex="0" hidden>
+        <h2>Construir (Cardboard)</h2>
+        <p class="lead">Aqui você encontra a lista de materiais, os moldes para impressão, a calculadora de medidas e o tutorial completo do autor, do corte do papelão ao encaixe do celular.</p>
+
+        <h3 id="escolha-versao">Escolha a versão do seu Cardboard</h3>
+        <div class="ver-choose" role="group" aria-label="Versão do Cardboard">
+          <button type="button" class="ver-card" data-ver="v1" aria-pressed="true">
+            <img src="assets/img/vrs/google-cardboardv1.jpg" alt="" width="220" height="142" loading="lazy">
+            <strong>Cardboard 1.0</strong><span>2014 · telas de até 5,7 pol. · botão por ímãs</span>
+          </button>
+          <button type="button" class="ver-card" data-ver="v2" aria-pressed="false">
+            <img src="assets/img/vrs/google-cardboardv2.jpg" alt="" width="220" height="193" loading="lazy">
+            <strong>Cardboard 2.0</strong><span>2015 · telas de até 6 pol. · botão que toca a tela</span>
+          </button>
+        </div>
+
+        <div class="ver-panel" id="ver-v1">
+          <h3>Cardboard 1.0 (2014)</h3>
+          <p>Apresentado no Google I/O 2014. É a versão mais simples: indicado para celulares menores, de até 5,7 pol. (cerca de 140 mm). O botão lateral usa ímãs, que o celular detecta pela bússola, então o aparelho precisa ter magnetômetro.</p>
+          <ul class="clean">
+            <li><strong>Celular:</strong> até 5,7 pol. de tela.</li>
+            <li><strong>Botão:</strong> ímãs (disco e anel). Nem todo celular reage bem.</li>
+            <li><strong>Montagem:</strong> mais trabalhosa (12 passos no total).</li>
+            <li><strong>Molde:</strong> template oficial do Google (v1.2), em inglês, 3 páginas, papel carta. Siga a legenda do PDF para a posição das lentes.</li>
+          </ul>
+          <div class="btn-row">
+            <a class="btn" href="assets/moldes/cardboard-v1.pdf" target="_blank" rel="noopener noreferrer" download>Baixar molde 1.0 (PDF)</a>
+            <a class="btn ghost" href="https://www.youtube.com/watch?v=nXp150UnLw0" target="_blank" rel="noopener noreferrer">Vídeo tutorial (Manual do Mundo)</a>
+          </div>
+        </div>
+        <div class="ver-panel" id="ver-v2" hidden>
+          <h3>Cardboard 2.0 (2015)</h3>
+          <p>Apresentado no Google I/O 2015. É mais atual: aceita celulares de até 6 pol. (cerca de 150 mm) e troca o ímã por um botão condutivo que toca a tela, funcionando em praticamente qualquer celular. A montagem é bem mais curta (3 passos, contra 12 do modelo anterior).</p>
+          <ul class="clean">
+            <li><strong>Celular:</strong> até 6 pol. de tela. Celulares maiores que isso não cabem neste modelo.</li>
+            <li><strong>Botão:</strong> condutivo; também libera a bússola para corrigir o desvio da imagem.</li>
+            <li><strong>Molde:</strong> template da comunidade (Instructables), em inglês, 5 páginas. Ele indica aberturas para lentes de 25 mm e de 37 mm.</li>
+            <li><strong>Atenção:</strong> a especificação oficial do Google para fabricantes cita lente de 34 mm de diâmetro e campo de visão de 80°. Use a lente que o seu molde indica.</li>
+          </ul>
+          <div class="btn-row">
+            <a class="btn" href="assets/moldes/cardboard-v2.pdf" target="_blank" rel="noopener noreferrer" download>Baixar molde 2.0 (PDF)</a>
+            <a class="btn ghost" href="https://www.youtube.com/watch?v=6He2Ff2s3A4" target="_blank" rel="noopener noreferrer">Vídeo tutorial (canal genérico)</a>
+          </div>
+          <figure class="ver-fig"><img src="assets/img/vrs/google-cardboardv2-aberto.jpg" alt="Cardboard 2.0 aberto, com o celular encaixado na bandeja" width="368" height="256" loading="lazy"></figure>
+        </div>
+        <div class="note"><strong>Como escolher:</strong> meça o seu celular (ou veja a ficha técnica) na <a href="#calculadora" data-goto="diy#calculadora">calculadora</a>. Até 5,7 pol., qualquer versão serve; entre 5,7 e 6 pol., use a 2.0; acima de 6 pol., nenhum dos dois cabe sem adaptação.</div>
+
+
+        <h3>Materiais necessários</h3>
+        <div class="grid">
+          <article class="card"><h3>Estrutura</h3><ul class="clean"><li>Papelão ondulado de caixa de envio (fino, de 1,5 a 3 mm)</li><li>Papel cartão ou papelão cinza para reforços</li></ul></article>
+          <article class="card"><h3>Óptica</h3><ul class="clean"><li>2 lentes biconvexas (ver o guia <em>Lentes</em>)</li><li>Distância focal usual: 34–45 mm; diâmetro: 25–37 mm</li></ul></article>
+          <article class="card"><h3>Fixação</h3><ul class="clean"><li>Cola branca ou cola quente (com cuidado)</li><li>Velcro ou 2 elásticos largos para a cabeça</li><li>Fita adesiva preta (opcional)</li></ul></article>
+          <article class="card"><h3>Ferramentas</h3><ul class="clean"><li>Estilete novo ou tesoura resistente</li><li>Régua metálica e esquadro</li><li>Lápis/caneta, base de corte, fita crepe</li></ul></article>
+        </div>
+
+        <h3>Download dos moldes (PDF)</h3>
+        <p>Imprima sempre em <strong>100% / "tamanho real"</strong> (desative "ajustar à página"). Confira a escala medindo o quadrado de teste, quando houver. A lista abaixo é carregada de <code>assets/js/config.js</code>.</p>
+        <div class="dl-list" id="moldes-list"></div>
+        <div class="note">Os moldes do projeto são fornecidos pelo autor. Moldes de terceiros (como as especificações públicas do Google Cardboard) também podem ser usados conforme as respectivas licenças.</div>
+
+        <h2 id="calculadora">Calculadora de medidas</h2>
+        <p>Informe as medidas do celular (da ficha técnica do fabricante, sem capinha) e os dados das lentes. A calculadora devolve as dimensões que o seu molde precisa ter. Os valores são <strong>estimativas</strong>: confirme sempre no teste a seco.</p>
+        <div class="demo">
+          <div class="calc">
+            <div class="field">
+              <label for="calc-preset">Tamanho aproximado do celular</label>
+              <select id="calc-preset">
+                <option value="145,70,8">Pequeno (≈ 5,5")</option>
+                <option value="160,75,8" selected>Médio (≈ 6,2")</option>
+                <option value="170,78,8.5">Grande (≈ 6,7")</option>
+                <option value="175,80,9">Muito grande (≈ 6,9")</option>
+                <option value="">Personalizado (digite abaixo)</option>
+              </select>
+            </div>
+            <div class="field"><label for="calc-len">Comprimento (mm)</label><input id="calc-len" type="number" inputmode="decimal" min="100" max="220" step="0.1" value="160"></div>
+            <div class="field"><label for="calc-wid">Largura (mm)</label><input id="calc-wid" type="number" inputmode="decimal" min="45" max="110" step="0.1" value="75"></div>
+            <div class="field"><label for="calc-thk">Espessura (mm)</label><input id="calc-thk" type="number" inputmode="decimal" min="5" max="15" step="0.1" value="8"></div>
+            <div class="field"><label for="calc-ipd">Seu IPD (mm)</label><input id="calc-ipd" type="number" inputmode="decimal" min="50" max="80" step="0.5" value="63"></div>
+            <div class="field"><label for="calc-foc">Distância focal da lente (mm)</label><input id="calc-foc" type="number" inputmode="decimal" min="20" max="100" step="0.5" value="45"></div>
+          </div>
+          <p class="msg-err" id="calc-msg" role="alert"></p>
+          <dl class="results" aria-live="polite">
+            <div class="result"><dt>Compartimento interno (C × L × E)</dt><dd id="r-comp">—</dd></div>
+            <div class="result"><dt>Área de imagem por olho</dt><dd id="r-eye">—</dd></div>
+            <div class="result"><dt>Centro de cada lente</dt><dd id="r-lens">—</dd></div>
+            <div class="result"><dt>Centro de cada olho na tela</dt><dd id="r-view">—</dd></div>
+            <div class="result"><dt>Lente–tela (imagem a 1 m)</dt><dd id="r-d1">—</dd></div>
+            <div class="result"><dt>Lente–tela (imagem a 2 m)</dt><dd id="r-d2">—</dd></div>
+            <div class="result"><dt>Lente–tela (imagem no infinito)</dt><dd id="r-dinf">—</dd></div>
+            <div class="result"><dt>Faixa de ajuste recomendada</dt><dd id="r-range">—</dd></div>
+          </dl>
+          <p class="mt"><small>Cálculo por lente fina: d = f·v / (f + v), em que f é a distância focal e v a distância aparente da imagem. O compartimento inclui 2 mm de folga em cada dimensão.</small></p>
+        </div>
+
+        <h2>Tutorial do Autor</h2>
+        <p>Passo a passo detalhado, elaborado por <strong>DhaaankMK</strong>. Leia todas as etapas antes de começar e trabalhe sempre em bancada firme e bem iluminada.</p>
+        <div class="note only-pc"><strong>Versão para PC:</strong> as etapas foram escritas para serem seguidas <strong>sem ter o celular em mãos</strong>. As medidas vêm da calculadora acima, e o celular só é necessário no teste final.</div>
+        <div class="note danger"><strong>Atenção — segurança no corte:</strong> estiletes cortam de verdade. Use lâmina nova (corta com menos força), base de corte, régua metálica, corte sempre <em>para longe do corpo</em> e mantenha a mão de apoio atrás da régua. Crianças só devem fazer essa etapa com supervisão de um adulto.</div>
+
+        <div class="progress">
+          <span id="diy-prog-text" role="status">0 etapas concluídas</span>
+          <progress id="diy-prog" max="13" value="0" aria-label="Progresso do tutorial"></progress>
+          <button class="btn ghost small" type="button" id="diy-reset">Reiniciar progresso</button>
+        </div>
+
+        <ol class="steps">
+          <li>
+            <h3>Defina as medidas do seu celular</h3>
+            <p class="only-pc">Procure o modelo na ficha técnica do fabricante (comprimento × largura × espessura, sem capinha) e digite os valores na <a href="#calculadora" data-goto="diy#calculadora">calculadora de medidas</a>. Não é preciso pegar o celular. Anote também a posição da câmera e da entrada de carregador/fones: o desenho deve deixar esses pontos livres.</p>
+            <p class="only-mobile">Meça o celular com régua (comprimento × largura × espessura), <strong>sem capinha</strong>, e digite os valores na <a href="#calculadora" data-goto="diy#calculadora">calculadora de medidas</a>. Observe onde ficam câmera, carregador e fones, para deixá-los livres.</p>
+          </li>
+          <li>
+            <h3>Imprima e confira o molde</h3>
+            <p>Imprima o molde em 100%. Meça o quadrado de teste com a régua: se estiver diferente do indicado, a escala está errada. Recorte o molde em papel (com tesoura) para usá-lo como gabarito. Compare o tamanho do compartimento no molde com o resultado da calculadora.</p>
+          </li>
+          <li>
+            <h3>Transfira o molde para o papelão</h3>
+            <p>Fixe o gabarito no papelão com fita crepe. Marque os contornos com lápis e <strong>perfure os pontos de lente e dobra</strong> com um palito para marcá-los. Repare na direção das "ondas" do papelão: dobras ficam mais limpas <em>ao longo</em> das ondas e mais difíceis <em>contra</em> elas.</p>
+            <p><strong>Dica:</strong> para a estrutura principal, posicione as ondas no sentido da altura da caixa, aumentando a rigidez.</p>
+          </li>
+          <li>
+            <h3>Corte o contorno externo</h3>
+            <p>Com régua metálica e estilete, faça <strong>vários cortes leves</strong> (3 a 4 passadas) em vez de um único corte profundo. Isso evita rasgar e dá acabamento mais limpo. Em curvas, use tesoura.</p>
+          </li>
+          <li>
+            <h3>Corte as aberturas das lentes e do nariz</h3>
+            <p>As aberturas das lentes devem ter o diâmetro das lentes <strong>menos 1 a 2 mm</strong>, para que fiquem presas por pressão. Posicione o centro de cada abertura conforme o valor "Centro de cada lente" da calculadora (metade do seu IPD, de cada lado do centro). O recorte do nariz é em formato de "arco" e permite aproximar o rosto da lente. Faça cortes pequenos e teste frequentemente; é fácil tirar mais, impossível devolver.</p>
+          </li>
+          <li>
+            <h3>Vinque as linhas de dobra</h3>
+            <p>Passe o lado cego do estilete (ou uma caneta sem tinta) pela régua, apertando levemente a linha de dobra, sem cortar. Isso "pré-dobra" o papelão. Dobre todas as abas a 90° e relaxe-as, repetindo 2 vezes para amaciá-las.</p>
+          </li>
+          <li>
+            <h3>Monte a caixa (teste a seco)</h3>
+            <p>Antes de colar, <strong>encaixe tudo sem cola</strong>, usando fita crepe nas junções provisoriamente. Verifique se as faces se alinham, se as lentes ficam centralizadas e se o compartimento tem o tamanho indicado pela calculadora.</p>
+          </li>
+          <li>
+            <h3>Cole a estrutura</h3>
+            <p>Aplique cola branca em camada fina nas abas e prenda com pregadores ou fita crepe por 10–15 minutos, até firmar. Se usar cola quente, trabalhe em pequenos trechos e <strong>cuidado com queimaduras</strong>. Deixe secar por completo (cerca de 1 hora para cola branca) antes de continuar.</p>
+          </li>
+          <li>
+            <h3>Instale as lentes</h3>
+            <p>Posicione as lentes com o lado mais curvo (convexo) voltado para o <strong>olho</strong>, salvo orientação diferente do fabricante. Coloque-as nas aberturas e fixe com anéis de papelão (moldura dupla), que prendem a lente sem cola direta. <strong>Nunca coloque cola próxima à superfície da lente</strong>: o vapor pode embaçá-la.</p>
+            <p>Verifique se as lentes estão <strong>paralelas</strong> à tela e na mesma altura.</p>
+          </li>
+          <li>
+            <h3>Faça o compartimento do celular</h3>
+            <p>O compartimento deve ter as medidas internas da calculadora e deixar o celular <strong>firme e centralizado</strong>. Cole tiras de papelão guia nas laterais e crie uma aba/trava frontal para segurá-lo. Se o celular ficar solto, adicione tiras de espuma ou EVA.</p>
+          </li>
+          <li>
+            <h3>Ajuste a distância lente–tela</h3>
+            <p class="only-pc">Sem o celular: use a "faixa de ajuste recomendada" da calculadora. Monte um suporte de tela deslizante cuja posição varie dentro dessa faixa (por exemplo, calços de papelão de 1 mm) e marque a posição inicial correspondente à imagem a 2 m. Se ainda não souber a distância focal real das suas lentes, meça-a conforme o guia <a href="#lentes" data-goto="lentes#medir-foco">Lentes</a>.</p>
+            <p class="only-mobile">Abra um vídeo 360° em modo VR e ajuste a distância entre a lente e a tela. Se a imagem estiver embaçada, aproxime ou afaste o celular em passos de 1–2 mm, dentro da faixa recomendada pela calculadora. Quando a imagem ficar nítida, marque a posição e fixe o compartimento.</p>
+          </li>
+          <li>
+            <h3>Acabamento e conforto</h3>
+            <p>Forre as bordas que tocam o rosto com <strong>espuma, EVA ou feltro</strong>. Pinte ou forre o interior com preto fosco (ou fita preta) para reduzir reflexos. Fixe o velcro/elásticos para a cabeça. Teste a pressão: deve ser firme, mas sem apertar.</p>
+          </li>
+          <li>
+            <h3>Teste final</h3>
+            <p class="only-pc">Este é o <strong>único momento</strong> em que o celular é necessário: encaixe-o, abra um vídeo 360° em modo VR e verifique (a) nitidez; (b) imagem centralizada nos dois olhos; (c) ausência de luz entrando pelas laterais; (d) conforto no nariz e na testa. Ajuste o IPD no app, se disponível. Comece com sessões curtas (10 minutos).</p>
+            <p class="only-mobile">Verifique: (a) nitidez; (b) imagem centralizada nos dois olhos; (c) ausência de luz entrando pelas laterais; (d) conforto no nariz e na testa. Ajuste o IPD no app, se disponível. Comece com sessões curtas (10 minutos).</p>
+          </li>
+        </ol>
+
+        <div class="note ok"><strong>Solução de problemas rápidos:</strong>
+          <ul class="clean mt">
+            <li><strong>Imagem dupla ou desconfortável:</strong> as lentes não estão alinhadas com seus olhos. Reajuste a posição ou o IPD.</li>
+            <li><strong>Imagem embaçada:</strong> ajuste a distância lente–tela e limpe as lentes com pano de microfibra.</li>
+            <li><strong>Celular escorrega:</strong> adicione trava, EVA ou elástico.</li>
+            <li><strong>Calor no rosto:</strong> faça pequenos furos de ventilação laterais (sem deixar entrar luz).</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- ===================== 4. GUIAS ===================== -->
+      <section id="guias" class="panel" role="tabpanel" aria-labelledby="tab-guias" tabindex="0" hidden>
+        <h2>Guias</h2>
+        <p class="lead">Escolha o assunto:</p>
+        <div class="subtabs" role="group" aria-label="Escolher guia">
+          <button type="button" class="sub-btn" data-sub="vr" aria-pressed="true">O que é VR</button>
+          <button type="button" class="sub-btn" data-sub="lentes" aria-pressed="false">Lentes</button>
+          <button type="button" class="sub-btn" data-sub="software" aria-pressed="false">Softwares &amp; PCVR</button>
+        </div>
+            <div id="vr" class="subpanel">
+        <h2>O que é VR?</h2>
+        <p class="lead">Realidade Virtual é a técnica de substituir o que seus olhos veem por um ambiente gerado por computador, que reage aos seus movimentos. Três conceitos explicam quase tudo no VR mobile.</p>
+
+        <h3>1. Giroscópio e sensores de movimento</h3>
+        <p>O celular possui um <strong>giroscópio</strong> (mede velocidade de rotação), um <strong>acelerômetro</strong> (mede aceleração e a direção da gravidade) e frequentemente um <strong>magnetômetro</strong> (bússola). Combinados ("fusão de sensores"), informam para onde o aparelho está apontando.</p>
+
+        <h3>2. 3DoF (três graus de liberdade)</h3>
+        <p>"DoF" significa <em>Degrees of Freedom</em>. No <strong>3DoF</strong> o sistema detecta apenas <strong>rotação</strong>: olhar para cima/baixo (<em>pitch</em>), esquerda/direita (<em>yaw</em>) e inclinar a cabeça (<em>roll</em>). Se você caminhar ou se abaixar, o mundo virtual não acompanha. O <strong>6DoF</strong> acrescenta a posição (frente/trás, lados, cima/baixo) e exige câmeras ou sensores externos, como em headsets dedicados.</p>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Recurso</th><th>3DoF (Cardboard)</th><th>6DoF (headsets dedicados)</th></tr></thead>
+            <tbody>
+              <tr><td>Rotação da cabeça</td><td>Sim</td><td>Sim</td></tr>
+              <tr><td>Movimento no espaço</td><td>Não</td><td>Sim</td></tr>
+              <tr><td>Controles de mão</td><td>Normalmente não (botão, gaze ou joystick Bluetooth)</td><td>Sim</td></tr>
+              <tr><td>Custo aproximado</td><td>Muito baixo</td><td>Médio a alto</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>3. Estereoscopia</h3>
+        <p>Seus olhos ficam a cerca de 6 cm um do outro e, por isso, veem a mesma cena de ângulos ligeiramente diferentes. O cérebro compara as duas imagens e calcula a profundidade. O app de VR reproduz isso desenhando <strong>duas imagens deslocadas</strong>, uma para cada olho.</p>
+
+        <div class="demo" id="simulador">
+          <h3>Simulador de VR (estéreo + 3DoF)</h3>
+          <p class="only-pc"><strong>Sem usar o celular:</strong> passe o mouse sobre a imagem para girar a "cabeça" virtual. Você também pode focar a imagem e usar as setas do teclado.</p>
+          <p class="only-mobile">Toque em <em>Usar sensores do celular</em> e gire o aparelho em pé (modo retrato). Em redes sem HTTPS, alguns navegadores bloqueiam os sensores.</p>
+          <canvas class="sim" id="sim-canvas" width="960" height="480" tabindex="0" role="img"
+                  aria-label="Duas imagens, uma para cada olho, mostrando cubos e um piso em grade. A visão muda conforme a cabeça virtual gira."></canvas>
+          <p class="readout" id="sim-readout" role="status" aria-live="off">yaw: 0° | pitch: 0°</p>
+          <div class="range-row">
+            <label for="sim-ipd">Exagero de profundidade</label>
+            <input type="range" id="sim-ipd" min="1" max="10" step="0.5" value="3">
+            <output id="sim-ipd-out" for="sim-ipd">3,0×</output>
+          </div>
+          <p>Observe que objetos próximos mudam muito mais de posição entre os dois olhos do que objetos distantes: essa diferença é o que o cérebro usa para sentir profundidade.</p>
+          <div class="btn-row center">
+            <button class="btn ghost" type="button" id="sim-center">Centralizar visão</button>
+            <button class="btn green only-mobile" type="button" id="sim-sensor">Usar sensores do celular</button>
+          </div>
+        </div>
+
+        <h3>Conceitos extras úteis</h3>
+        <details><summary>Campo de visão (FOV)</summary><p>É o quanto do mundo você enxerga ao mesmo tempo. Lentes de maior diâmetro e melhor posicionamento aumentam o FOV. Cardboards simples ficam geralmente entre 80° e 100°.</p></details>
+        <details><summary>Distorção de lente e correção no software</summary><p>Lentes ampliam a imagem, mas deformam as bordas ("almofada"). Os apps aplicam a distorção inversa ("barril") para que, vista pela lente, a imagem pareça reta.</p></details>
+        <details><summary>IPD (distância interpupilar)</summary><p>É a distância entre o centro das pupilas, comumente entre 58 mm e 72 mm em adultos. O ideal é que o centro de cada lente coincida com sua pupila. Caso contrário, pode haver desconforto visual.</p></details>
+        <details><summary>Enjoo de movimento (cybersickness)</summary><p>Ocorre quando o que os olhos veem não combina com o que o ouvido interno sente. Prefira conteúdos com pouca movimentação artificial, faça pausas e interrompa a sessão ao sentir mal-estar.</p></details>
+
+        <div class="note warn"><strong>Segurança:</strong> use VR sentado ou em área livre de obstáculos, faça pausas a cada 20–30 minutos e evite o uso prolongado por crianças pequenas. Consulte as recomendações de faixa etária do fabricante do seu aparelho.</div>
+      </div>
+            <div id="lentes" class="subpanel" hidden>
+        <h2>Lentes &amp; Gambiarras</h2>
+        <p class="lead">A lente é a peça que mais influencia a qualidade da experiência. Vale investir um pouco nela, mas existem alternativas caseiras para experimentar sem gastar.</p>
+
+        <h3>Lentes biconvexas baratas (recomendado)</h3>
+        <p>Lentes biconvexas (curvas dos dois lados) são vendidas em lojas de componentes ópticos, marketplaces e kits de Cardboard. Procure por especificações, não por marca.</p>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Característica</th><th>Valor típico</th><th>Por que importa</th></tr></thead>
+            <tbody>
+              <tr><td>Distância focal</td><td>34 a 45 mm</td><td>Define o tamanho da caixa e o aumento da imagem.</td></tr>
+              <tr><td>Diâmetro</td><td>25 a 37 mm</td><td>Maior diâmetro geralmente dá campo de visão maior.</td></tr>
+              <tr><td>Material</td><td>Acrílico (PMMA) ou vidro óptico</td><td>Acrílico é barato e leve; vidro é mais nítido e resistente a riscos.</td></tr>
+              <tr><td>Revestimento</td><td>Sem ou com antirreflexo</td><td>Reduz reflexos internos.</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <ul class="clean">
+          <li><strong>Teste a lente antes de montar:</strong> olhe um texto pela lente a distância variável; deve ser possível encontrar um ponto de foco nítido.</li>
+          <li><strong>Cuidado com cobrança excessiva:</strong> lentes "VR" genéricas costumam ser o mesmo produto vendido a preços muito diferentes.</li>
+          <li><strong>Armazene longe do sol:</strong> lentes concentram luz (ver aviso abaixo).</li>
+        </ul>
+
+        <h3 id="medir-foco">Meça a distância focal da sua lente (sem celular)</h3>
+        <p>Se a lente não informa a distância focal, é possível medi-la com materiais comuns. O resultado alimenta a <a href="#calculadora" data-goto="diy#calculadora">calculadora de medidas</a>.</p>
+        <div class="note danger"><strong>Nunca use o sol</strong> nesse teste: lentes concentram a luz solar e podem queimar papel, tecido e pele, além de causar danos aos olhos. Use apenas uma lâmpada distante, em ambiente interno.</div>
+        <ol class="steps">
+          <li><h3>Escolha uma fonte de luz distante</h3><p>Acenda uma lâmpada (ou observe uma janela com luz difusa, <em>sem sol direto</em>) a pelo menos 5 metros de distância. Quanto mais longe, mais precisa a medida.</p></li>
+          <li><h3>Projete a imagem em uma folha</h3><p>Segure a lente entre a lâmpada e uma folha branca. Aproxime e afaste a lente da folha até que a imagem da lâmpada (ou da janela) fique <strong>nítida e pequena</strong>.</p></li>
+          <li><h3>Meça a distância</h3><p>Com uma régua, meça a distância entre a lente e a folha. Esse valor é, aproximadamente, a <strong>distância focal</strong> (f) da lente.</p></li>
+          <li><h3>Repita e use a média</h3><p>Faça 3 medições e calcule a média. Informe esse valor na calculadora.</p></li>
+        </ol>
+
+        <h3>Alternativas caseiras</h3>
+        <div class="grid">
+          <article class="card"><span class="ico" aria-hidden="true">🔍</span><h3>Lupas de bolso / de leitura</h3><p>Lupas plásticas de 2x a 5x podem ser desmontadas ou usadas diretamente. A qualidade é variável, mas serve para testes de conceito.</p></article>
+          <article class="card"><span class="ico" aria-hidden="true">👓</span><h3>Lentes de óculos de leitura</h3><p>Óculos de "grau positivo" (+2,5 a +4,0) têm lentes convexas. Experimente combinações; a distância à tela deve ser ajustada.</p></article>
+          <article class="card"><span class="ico" aria-hidden="true">📷</span><h3>Lentes de sucata</h3><p>Lentes de projetores antigos, binóculos ou câmeras descartáveis podem ser reaproveitadas com resultados surpreendentes.</p></article>
+          <article class="card"><span class="ico" aria-hidden="true">🧴</span><h3>Lentes de PET com água</h3><p>A mais criativa das gambiarras. Detalhes a seguir.</p></article>
+        </div>
+
+        <h3>Lente caseira de PET com água (experimento)</h3>
+        <p>Uma "bolha" de água dentro de um plástico transparente forma uma lente convexa. A qualidade óptica é <strong>limitada</strong> (distorção e aberrações), mas funciona como demonstração educativa.</p>
+        <div class="note danger"><strong>Risco de incêndio:</strong> lentes de água ou de qualquer tipo, expostas ao sol, podem <strong>concentrar a luz e queimar</strong> papel, tecido ou madeira. Nunca deixe a lente, nem o headset, perto de janelas ou sob o sol. Guarde sempre em local coberto.</div>
+        <ol class="steps">
+          <li><h3>Separe o material</h3><p>Garrafa PET transparente e limpa (ou potes plásticos finos e transparentes), tesoura, água limpa, fita adesiva transparente e uma tampa ou anel de papelão.</p></li>
+          <li><h3>Corte a parte curva</h3><p>Corte a região curva do fundo ou do ombro da garrafa, formando uma cúpula transparente com cerca de 4 cm de diâmetro. Escolha um trecho <strong>sem riscos ou dobras</strong>.</p></li>
+          <li><h3>Monte a cúpula sobre uma base plana</h3><p>Fixe a cúpula sobre uma base de plástico transparente plano (pedaço de PET liso ou película), selando as bordas com fita para formar um compartimento estanque.</p></li>
+          <li><h3>Encha com água</h3><p>Preencha com água limpa por um pequeno orifício, <strong>sem bolhas de ar</strong>, e sele-o. A água formará uma lente plano-convexa.</p></li>
+          <li><h3>Teste e ajuste</h3><p>Olhe um texto através dela. Se houver nitidez, posicione-a na caixa. Use um anel de papelão para mantê-la no lugar.</p></li>
+        </ol>
+        <div class="note warn"><strong>Limitações:</strong> a lente de água pode vazar, evaporar ou gerar distorções fortes. Mantenha-a longe do celular e de eletrônicos para evitar danos por líquido. Para uso recorrente, prefira lentes biconvexas reais.</div>
+
+        <h3>Cuidados com as lentes</h3>
+        <ul class="clean">
+          <li>Limpe com pano de microfibra, sem álcool forte em lentes de acrílico (pode trincar ou embaçar).</li>
+          <li>Evite tocar com os dedos; a gordura reduz a nitidez.</li>
+          <li>Se usa óculos, teste se cabem dentro da caixa ou ajuste a distância focal da lente.</li>
+        </ul>
+      </div>
+            <div id="software" class="subpanel" hidden>
+        <h2>Softwares &amp; PCVR</h2>
+        <p class="lead">Com o hardware pronto, é hora de conteúdo. Abaixo, categorias de apps essenciais e o caminho para transmitir jogos do PC para o celular.</p>
+        <div class="note warn"><strong>Atenção:</strong> apps e serviços mudam rapidamente (descontinuações, renomeações, preços). Sempre confirme a disponibilidade e a compatibilidade na loja oficial do seu sistema (Google Play ou App Store) antes de instalar.</div>
+
+        <h3>Apps essenciais para VR mobile</h3>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Categoria</th><th>Exemplos</th><th>Observações</th></tr></thead>
+            <tbody>
+              <tr><td>Vídeos 360°/VR</td><td>YouTube (modo "Cardboard" nos vídeos 360°/VR)</td><td>Ponto de partida mais fácil e gratuito.</td></tr>
+              <tr><td>Demos oficiais</td><td>App Google Cardboard e demonstrações do SDK de código aberto</td><td>Ótimos para testar calibragem e perfil da lente.</td></tr>
+              <tr><td>Jogos simples</td><td>Jogos "VR / Cardboard" nas lojas oficiais</td><td>Prefira os que aceitam olhar (gaze) ou controle Bluetooth.</td></tr>
+              <tr><td>Fotos 360°</td><td>Galeria do próprio celular e apps de visualização 360°</td><td>Tire suas próprias fotos panorâmicas.</td></tr>
+              <tr><td>Configuração</td><td>Leitor de QR do perfil da lente (Cardboard)</td><td>Ajusta a distorção ao seu headset.</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p><strong>Dica de ouro:</strong> use um controle Bluetooth (gamepad) para jogos. Muitos apps de VR mobile aceitam gamepads comuns.</p>
+
+        <h3>PCVR: transmitindo jogos do PC (SteamVR) para o celular</h3>
+        <p>PCVR é o uso do poder do PC para renderizar o jogo, enquanto o celular apenas exibe a imagem (streaming) e envia os dados de movimento. A ideia geral é:</p>
+        <div class="grid">
+          <article class="card"><h3>1. PC</h3><p>Renderiza o jogo VR (SteamVR) e gera as imagens estereoscópicas.</p></article>
+          <article class="card"><h3>2. Rede Wi-Fi</h3><p>Envia o vídeo ao celular e recebe de volta os dados dos sensores.</p></article>
+          <article class="card"><h3>3. Celular + caixa</h3><p>Exibe as imagens e informa a rotação da cabeça.</p></article>
+        </div>
+
+        <h3>Ferramentas conhecidas de streaming SteamVR → celular</h3>
+        <p>Existem soluções criadas pela comunidade e por empresas independentes. Verifique o estado atual de cada uma, pois algumas podem ter sido descontinuadas ou exigir licença paga:</p>
+        <ul class="clean">
+          <li><strong>iVRy</strong>: driver para SteamVR com app para celular (Android e iOS), com opções de rastreamento de rotação.</li>
+          <li><strong>Trinus VR</strong>: transmite a tela do PC ao celular em formato estereoscópico, com suporte a rotação por sensores.</li>
+          <li><strong>ALVR</strong>: projeto de código aberto voltado a headsets standalone; verifique compatibilidade com celulares antes de tentar.</li>
+          <li><strong>Steam Link</strong>: streaming de jogos do PC, mas o suporte a VR em celulares variou ao longo do tempo. Confirme no site oficial da Valve.</li>
+        </ul>
+
+        <h3>Passo a passo geral</h3>
+        <div class="note only-pc"><strong>Você está no PC:</strong> as etapas 1 a 4 são feitas aqui, no computador. O celular só entra na etapa 5, quando o app estiver instalado.</div>
+        <ol class="steps">
+          <li><h3>Verifique os requisitos do PC</h3><p>Placa de vídeo dedicada razoável, Windows atualizado, Steam e SteamVR instalados. Quanto mais potente a placa de vídeo, melhor a experiência.</p></li>
+          <li><h3>Prepare a rede</h3><p>Conecte o <strong>PC por cabo Ethernet</strong> ao roteador e use Wi-Fi <strong>5 GHz</strong> (ou 6 GHz) no celular, no mesmo roteador. Evite redes congestionadas e repetidores.</p></li>
+          <li><h3>Instale o driver no PC</h3><p>Baixe <strong>apenas do site oficial</strong> do projeto escolhido. Evite versões "crackeadas" ou repacotadas, pois podem conter malware.</p></li>
+          <li><h3>Habilite o driver no SteamVR</h3><p>Siga a documentação da ferramenta e confirme que o SteamVR reconhece o driver. Anote o endereço IP do PC, se o app do celular pedir.</p></li>
+          <li><h3>Instale o app e pareie o celular</h3><p>Instale o app apenas pela loja oficial do sistema, informe o IP do PC (ou pareie automaticamente) e confirme que a imagem aparece em dois olhos.</p></li>
+          <li><h3>Ajuste resolução e taxa de bits</h3><p>Comece com resolução baixa (720p) e 30–60 FPS. Aumente gradualmente até encontrar o equilíbrio entre qualidade e latência. Teste primeiro com um jogo leve; se houver enjoo, reduza a latência ou a movimentação artificial.</p></li>
+        </ol>
+
+        <div class="note ok"><strong>Dicas para menos latência:</strong>
+          <ul class="clean mt">
+            <li>Use roteador próximo, sem obstáculos, e Wi-Fi 5 GHz dedicado.</li>
+            <li>Feche aplicativos em segundo plano no PC e no celular.</li>
+            <li>Mantenha o celular fresco: superaquecimento reduz o desempenho.</li>
+            <li>Prefira gamepad em vez de controles por movimento, que o Cardboard não rastreia.</li>
+          </ul>
+        </div>
+        <div class="note danger"><strong>Segurança digital:</strong> não desative antivírus nem firewall por orientação de fontes desconhecidas. Se um guia exigir liberar portas, faça-o apenas na rede local e mantenha seu roteador atualizado.</div>
+      </div>
+      </section>
+
+    </main>
+
+    <aside class="toc" aria-label="Nesta aba">
+      <h2>Nesta aba</h2>
+      <ul id="toc-list"></ul>
+    </aside>
+  </div>
+
+  <footer class="site">
+    <div class="wrap cols">
+      <div>
+        <p><strong>OpenBox VR</strong> — projeto open-source e 100% gratuito.</p>
+        <p>Criado por <strong>DhaaankMK</strong>. © 2026 DhaaankMK. Todos os direitos reservados.</p>
+        <p class="made">By <strong>DhaaankMK</strong> <span class="chip-html">&lt;/&gt; Built in HTML</span></p>
+        <p>O conteúdo deste site é regido pela <strong>DHAAANKMK PROPRIETARY LICENSE (DUMP-L) v1.0</strong> (arquivo <code>LICENSE.txt</code>). Proibidas a remoção de créditos, a revenda e a reivindicação de autoria. Trabalhos derivados não estão cobertos por esta licença.</p>
+      </div>
+      <div class="links">
+        <a href="https://github.com/DhaaankMK" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="https://www.youtube.com/@DhaaankMK" target="_blank" rel="noopener noreferrer">YouTube</a>
+        <a href="LICENSE.txt" target="_blank" rel="noopener noreferrer">Licença</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
