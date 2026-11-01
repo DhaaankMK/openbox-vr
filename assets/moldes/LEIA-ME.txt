@@ -1,0 +1,12 @@
+OpenBox VR — pasta de moldes (PDF)
+Criador: DhaaankMK | https://github.com/DhaaankMK
+
+Coloque aqui os arquivos PDF dos moldes e, em seguida, registre-os em
+assets/js/config.js, no campo "arquivo" de cada molde. Exemplo:
+
+  arquivo: "assets/moldes/cardboard-classico.pdf"
+
+Recomendações:
+- Use nomes sem espaços, acentos ou letras maiúsculas.
+- Gere os PDFs em tamanho real (100%), com um quadrado de teste de escala (por exemplo, 50 x 50 mm).
+- Mantenha o crédito "DhaaankMK / OpenBox VR" no rodapé de cada PDF (Cláusula 3.2 da DUMP-L).
